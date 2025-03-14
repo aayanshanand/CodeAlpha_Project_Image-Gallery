@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Image Gallery</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search images...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-container">
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="nature">Nature</button>
+                        <button class="filter-btn" data-category="architecture">Architecture</button>
+                        <button class="filter-btn" data-category="travel">Travel</button>
+                        <button class="filter-btn" data-category="food">Food</button>
+                        <button class="filter-btn" data-category="people">People</button>
+                    </div>
+                </div>
+                <div class="sort-section">
+                    <h3>Sort By</h3>
+                    <select id="sort-select">
+                        <option value="default">Default</option>
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="gallery-container">
+            <div id="gallery" class="image-gallery"></div>
+            <div id="spinner" class="spinner hidden">
+                <div class="spinner-inner"></div>
+            </div>
+            <div id="no-results" class="no-results hidden">
+                <p>No images match your search criteria.</p>
+            </div>
+            <div class="load-more-container">
+                <button id="load-more">Load More</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close"><i class="fas fa-times"></i></button>
+            <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-category"></p>
+                <p id="lightbox-date"></p>
+            </div>
+            <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Responsive Image Gallery. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
